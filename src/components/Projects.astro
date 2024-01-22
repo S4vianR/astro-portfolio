@@ -1,0 +1,47 @@
+<section class="w-3/5 mt-16">
+  <section class="flex justify-center items-center mb-3">
+    <h2 class="text-xl font-bold">Proyectos</h2>
+  </section>
+  <section class="grid grid-cols-1 gap-5">
+    <article class="border-2 border-white h-48">
+      <div
+        class="flex flex-col justify-end items-start bg-slate-800/70 h-full transition-all p-2"
+        id="div-art1"
+      >
+        <h2 class="text-xl font-bold">Rick and Morty API</h2>
+        <p>Tecnologias: TailwindCSS, Astro, Svelte, REST API</p>
+      </div>
+    </article>
+    <article class="border-2 border-white p-2">To Be Developed</article>
+    <article class="border-2 border-white p-2">To Be Developed</article>
+    <article class="border-2 border-white p-2">To Be Developed</article>
+  </section>
+</section>
+
+<script is:inline>
+  const divArt1 = document.getElementById("div-art1");
+  divArt1.addEventListener("mouseover", () => {
+    divArt1.classList.remove("opacity-100");
+    divArt1.classList.add("opacity-10");
+    divArt1.classList.add("cursor-pointer");
+    divArt1.addEventListener("click", () => {
+      // Link Rick and Morty in a blank page
+      url = "https://rick-morty-s4vianr.netlify.app/";
+      window.open(url, "_blank");
+    });
+  });
+  divArt1.addEventListener("mouseout", () => {
+    divArt1.classList.remove("opacity-10");
+    divArt1.classList.remove("cursor-pointer");
+    divArt1.classList.add("opacity-100");
+  });
+</script>
+
+<style>
+  article:nth-child(1) {
+    background-image: url("../../rick_morty_homepage.webp");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+</style>
